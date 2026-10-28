@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Support Desk · Local AI</title>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+    <!-- Application header -->
+    <header>
+        <div class="brand-mark">S</div>
+
+        <div>
+            <strong>Support Desk</strong>
+            <small>Customer care workspace</small>
+        </div>
+
+        <span class="local-pill">
+            <i></i>
+            Local AI
+        </span>
+    </header>
+
+
+    <!-- Main application content -->
+    <main>
+
+        <!-- Page heading -->
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">WORKSPACE / TICKETS</p>
+
+                <h1>Customer tickets</h1>
+
+                <p>
+                    Review customer issues and prepare grounded responses.
+                </p>
+            </div>
+
+            <button class="primary" id="newTicket">
+                ＋ New ticket
+            </button>
+        </section>
+
+
+        <!-- Ticket summary cards -->
+        <div class="summary">
+
+            <div>
+                <span>OPEN TICKETS</span>
+                <b id="openCount">—</b>
+            </div>
+
+            <div>
+                <span>IN PROGRESS</span>
+                <b id="progressCount">—</b>
+            </div>
+
+            <div>
+                <span>RESOLVED</span>
+                <b id="resolvedCount">—</b>
+            </div>
+
+            <div class="summary-note">
+                <span>AI WORKFLOW</span>
+
+                <b>
+                    Local prediction
+                    <em>→</em>
+                    Knowledge-grounded response
+                </b>
+            </div>
+
+        </div>
+
+
+        <!-- Ticket list -->
+        <section class="panel">
+
+            <div class="panel-head">
+                <div>
+                    <h2>All tickets</h2>
+                    <p>Latest updates from your support queue</p>
+                </div>
+
+                <select id="statusFilter">
+                    <option value="all">All statuses</option>
+                    <option>Open</option>
+                    <option>In Progress</option>
+                    <option>Resolved</option>
+                </select>
+            </div>
+
+
+            <!-- Tickets table -->
+            <div class="table-wrap">
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>TICKET</th>
+                            <th>CUSTOMER</th>
+                            <th>SUBJECT</th>
+                            <th>PRIORITY</th>
+                            <th>STATUS</th>
+                            <th>UPDATED</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="ticketRows">
+                        <tr>
+                            <td colspan="6" class="empty">
+                                Loading tickets…
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Create ticket dialog -->
+    <dialog id="ticketDialog">
+
+        <form id="ticketForm">
+
+            <div class="modal-head">
+                <div>
+                    <p class="eyebrow">SUPPORT TICKET</p>
+                    <h2 id="formTitle">Create a ticket</h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="closeDialog"
+                >
+                    ×
+                </button>
+            </div>
+
+
+            <!-- Ticket input fields -->
+            <div class="form-grid">
+
+                <label>
+                    Customer name
+                    <input
+                        name="customer_name"
+                        required
+                        placeholder="Customer name"
+                    >
+                </label>
+
+
+                <label>
+                    Category
+                    <select name="category">
+                        <option>Account</option>
+                        <option>Billing</option>
+                        <option>Orders</option>
+                        <option>Technical</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+
+
+                <label class="span-2">
+                    Subject
+                    <input
+                        name="subject"
+                        required
+                        placeholder="Briefly describe the issue"
+                    >
+                </label>
+
+
+                <label class="span-2">
+                    Description
+                    <textarea
+                        name="description"
+                        required
+                        rows="4"
+                        placeholder="What happened? Include relevant details."
+                    ></textarea>
+                </label>
+
+
+                <label>
+                    Priority
+                    <select name="priority">
+                        <option>Low</option>
+                        <option selected>Medium</option>
+                        <option>High</option>
+                        <option>Urgent</option>
+                    </select>
+                </label>
+
+
+                <!-- Additional fields loaded dynamically -->
+                <div
+                    id="dynamicFields"
+                    class="span-2 dynamic-grid"
+                ></div>
+
+            </div>
+
+
+            <!-- Form actions -->
+            <div class="modal-actions">
+                <button
+                    type="button"
+                    class="secondary"
+                    id="cancelDialog"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="primary"
+                    id="saveButton"
+                >
+                    Generate response
+                </button>
+            </div>
+
+            <p class="form-error" id="formError"></p>
+
+        </form>
+
+    </dialog>
+
+
+    <!-- Ticket details dialog -->
+    <dialog id="detailDialog">
+        <div id="detailContent"></div>
+    </dialog>
+
+
+    <!-- Application notifications -->
+    <div id="toast" role="status"></div>
+
+
+    <!-- Application JavaScript -->
+    <script src="/app.js"></script>
+
+</body>
+</html>

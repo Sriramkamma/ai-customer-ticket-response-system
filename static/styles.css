@@ -1,0 +1,665 @@
+
+/* ========================================
+   1. GLOBAL STYLES AND THEME VARIABLES
+   ======================================== */
+
+:root {
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 14px;
+
+    color: #172b4d;
+    background: #f5f7fb;
+
+    --muted: #7b8799;
+    --line: #e6eaf0;
+    --blue: #315bea;
+    --navy: #112542;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+/* ========================================
+   2. APPLICATION HEADER
+   ======================================== */
+
+header {
+    height: 72px;
+    padding: 0 max(calc((100vw - 1180px) / 2), 28px);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+}
+
+.brand-mark {
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 11px;
+    background: var(--blue);
+    color: white;
+
+    font: 800 19px Manrope;
+}
+
+header strong {
+    display: block;
+
+    color: var(--navy);
+    font: 700 15px Manrope;
+}
+
+header small {
+    display: block;
+    margin-top: 2px;
+
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.local-pill {
+    margin-left: auto;
+    padding: 7px 12px;
+
+    border: 1px solid #cdebdc;
+    border-radius: 30px;
+
+    background: #f2fbf6;
+    color: #23784c;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.local-pill i {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+    margin-right: 6px;
+
+    border-radius: 50%;
+    background: #26a269;
+}
+
+
+/* ========================================
+   3. MAIN PAGE AND PAGE HEADING
+   ======================================== */
+
+main {
+    max-width: 1180px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    margin: 0 0 9px;
+
+    color: #8a96aa;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.page-heading h1 {
+    margin: 0;
+
+    color: var(--navy);
+    font: 800 29px Manrope;
+    letter-spacing: -0.7px;
+}
+
+.page-heading p:not(.eyebrow) {
+    margin: 8px 0 0;
+    color: var(--muted);
+}
+
+
+/* ========================================
+   4. BUTTONS
+   ======================================== */
+
+.primary,
+.secondary {
+    padding: 11px 16px;
+
+    border: 0;
+    border-radius: 7px;
+
+    font: 600 13px "DM Sans";
+    cursor: pointer;
+}
+
+.primary {
+    background: var(--blue);
+    color: #fff;
+
+    box-shadow: 0 3px 8px #315bea33;
+}
+
+.primary:hover {
+    background: #2248ca;
+}
+
+.secondary {
+    background: #f2f4f8;
+    color: #45536a;
+}
+
+
+/* ========================================
+   5. TICKET SUMMARY CARDS
+   ======================================== */
+
+.summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    gap: 1px;
+
+    margin-bottom: 25px;
+    overflow: hidden;
+
+    border: 1px solid #e8edf3;
+    border-radius: 10px;
+    background: #e8edf3;
+}
+
+.summary > div {
+    padding: 19px 21px;
+    background: #fff;
+}
+
+.summary span {
+    display: block;
+
+    color: #8995a7;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.summary b {
+    display: block;
+    margin-top: 8px;
+
+    color: #1b3152;
+    font: 700 22px Manrope;
+}
+
+.summary-note b {
+    margin-top: 12px;
+    font: 600 13px "DM Sans";
+}
+
+.summary-note em {
+    padding: 0 5px;
+
+    color: var(--blue);
+    font-style: normal;
+}
+
+
+/* ========================================
+   6. TICKET TABLE PANEL
+   ======================================== */
+
+.panel {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+
+    background: #fff;
+    box-shadow: 0 3px 10px #17304b06;
+}
+
+.panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 21px 22px;
+    border-bottom: 1px solid var(--line);
+}
+
+h2 {
+    margin: 0;
+
+    color: #193253;
+    font: 700 16px Manrope;
+}
+
+.panel-head p {
+    margin: 5px 0 0;
+
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.panel-head select,
+select {
+    padding: 9px 29px 9px 11px;
+
+    border: 1px solid var(--line);
+    border-radius: 6px;
+
+    background: #fff;
+    color: #526078;
+
+    font: 500 12px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 13px 20px;
+
+    background: #fbfcfe;
+    color: #8995a7;
+
+    font-size: 10px;
+    letter-spacing: 0.7px;
+    text-align: left;
+}
+
+td {
+    padding: 15px 20px;
+    border-top: 1px solid #eef1f5;
+
+    color: #506079;
+    font-size: 12px;
+}
+
+tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background: #fafbfe;
+}
+
+.ticket-id {
+    color: #315bea;
+    font-weight: 700;
+}
+
+.subject-cell {
+    color: #263a57;
+    font-weight: 600;
+}
+
+.empty {
+    padding: 38px;
+    color: #8591a2;
+    text-align: center;
+}
+
+
+/* ========================================
+   7. TICKET STATUS AND PRIORITY
+   ======================================== */
+
+.pill {
+    display: inline-block;
+    padding: 5px 9px;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.status-open {
+    background: #fff5e2;
+    color: #a46512;
+}
+
+.status-in-progress {
+    background: #edf1ff;
+    color: #315bea;
+}
+
+.status-resolved {
+    background: #e9f7ef;
+    color: #23784c;
+}
+
+.priority-high,
+.priority-urgent {
+    color: #bb4d45;
+}
+
+.priority-medium {
+    color: #a46512;
+}
+
+.priority-low {
+    color: #708096;
+}
+
+
+/* ========================================
+   8. DIALOGS AND MODAL HEADERS
+   ======================================== */
+
+dialog {
+    width: min(680px, calc(100% - 30px));
+    max-height: 90vh;
+
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+
+    color: #172b4d;
+    box-shadow: 0 25px 90px #14233b40;
+}
+
+dialog::backdrop {
+    background: #14233b78;
+    backdrop-filter: blur(2px);
+}
+
+#ticketForm {
+    padding: 25px;
+}
+
+.modal-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 23px;
+}
+
+.modal-head h2 {
+    font-size: 20px;
+}
+
+.icon-button {
+    border: 0;
+    background: none;
+
+    color: #8490a1;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   9. TICKET CREATION FORM
+   ======================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    color: #44536b;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.form-grid input,
+.form-grid textarea,
+.form-grid select {
+    padding: 10px 11px;
+
+    border: 1px solid #dfe4eb;
+    border-radius: 6px;
+    outline: none;
+
+    color: #263a57;
+    font: 400 13px "DM Sans";
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus,
+.form-grid select:focus {
+    border-color: #6d88ee;
+    box-shadow: 0 0 0 3px #315bea13;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+
+/* ========================================
+   10. DYNAMIC FORM FIELDS
+   ======================================== */
+
+.dynamic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.dynamic-grid label {
+    font-size: 11px;
+}
+
+.check-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+
+    padding-top: 17px;
+}
+
+
+/* ========================================
+   11. FORM ACTIONS AND ERRORS
+   ======================================== */
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+
+    margin-top: 22px;
+}
+
+.form-error {
+    margin: 10px 0 0;
+
+    color: #bd3f3b;
+    font-size: 12px;
+}
+
+
+/* ========================================
+   12. TICKET DETAIL DIALOG
+   ======================================== */
+
+.detail-wrap {
+    padding: 26px;
+}
+
+.detail-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-title h2 {
+    margin: 4px 0 10px;
+    font-size: 21px;
+}
+
+.detail-sub {
+    margin: 0 0 22px;
+
+    color: #7b8799;
+    font-size: 12px;
+}
+
+.detail-section {
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+}
+
+.detail-section h3 {
+    margin: 0 0 10px;
+
+    color: #8793a5;
+
+    font: 700 11px "DM Sans";
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.detail-section p {
+    margin: 0;
+
+    color: #42526b;
+    line-height: 1.65;
+    white-space: pre-wrap;
+}
+
+.solution-box {
+    padding: 12px;
+
+    border: 1px solid #e1e8ff;
+    border-radius: 7px;
+
+    background: #f4f7ff;
+    color: #2949ae !important;
+}
+
+.detail-response {
+    width: 100%;
+    min-height: 130px;
+    padding: 12px;
+
+    border: 1px solid #dfe4eb;
+    border-radius: 7px;
+
+    color: #35445e;
+    font: 13px/1.6 "DM Sans";
+}
+
+.detail-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.detail-actions > div {
+    display: flex;
+    gap: 8px;
+}
+
+
+/* ========================================
+   13. TOAST NOTIFICATIONS
+   ======================================== */
+
+#toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+
+    padding: 11px 17px;
+
+    border-radius: 7px;
+    background: #17304b;
+    color: white;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform: translate(-50%, 20px);
+    transition: 0.2s;
+
+    box-shadow: 0 5px 20px #10203a33;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+
+/* ========================================
+   14. RESPONSIVE LAYOUT
+   ======================================== */
+
+@media (max-width: 700px) {
+    main {
+        margin: 25px auto;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .page-heading h1 {
+        font-size: 23px;
+    }
+
+    .summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .summary-note {
+        grid-column: span 2;
+    }
+
+    .panel-head {
+        padding: 16px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .span-2 {
+        grid-column: span 1;
+    }
+
+    .dynamic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dynamic-grid label {
+        grid-column: span 1;
+    }
+
+    header {
+        padding: 0 18px;
+    }
+}

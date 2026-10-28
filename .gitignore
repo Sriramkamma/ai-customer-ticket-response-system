@@ -1,0 +1,29 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Development backups
+*.bak
+
+# Generated local database
+*.db
+*.sqlite
+*.sqlite3
+data/tickets.db
+data/tickets.db-journal
+data/tickets.db-shm
+data/tickets.db-wal
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets / local environment
+.env
+.env.*
+!.env.example

@@ -1,0 +1,14 @@
+[
+ {"subject":"Unable to log in","description":"Forgot password and cannot access account","solution":"Reset the password using the account recovery process."},
+ {"subject":"Password reset email not received","description":"I tried forgot password but no email arrived","solution":"Check the spam folder and request a new password reset email for the registered address."},
+ {"subject":"Payment was declined","description":"My card payment fails at checkout","solution":"Verify the billing details and contact the card issuer if the payment continues to be declined."},
+ {"subject":"Charged twice for my order","description":"I see two charges for one purchase","solution":"Share the order details with support so the duplicate charge can be reviewed."},
+ {"subject":"Where is my order","description":"My shipment is late and tracking has not updated","solution":"Check the order tracking page for the latest shipment status."},
+ {"subject":"Package delivered but missing","description":"Tracking says delivered but I cannot find the package","solution":"Check nearby delivery locations and contact support with your order number if it remains missing."},
+ {"subject":"App crashes on launch","description":"The mobile application closes as soon as I open it","solution":"Restart the app and device, then install the latest available app update."},
+ {"subject":"Cannot upload a document","description":"File upload stops and shows an error","solution":"Confirm the file meets the supported format and size limits, then try uploading again."},
+ {"subject":"Change shipping address","description":"I entered the wrong delivery address for my order","solution":"Contact support promptly with the order number to check whether the shipping address can still be updated."},
+ {"subject":"Cancel my subscription","description":"I want to stop the next subscription renewal","solution":"Open subscription settings and follow the cancellation steps shown there."},
+ {"subject":"Refund status","description":"I returned an item and want to know when the refund arrives","solution":"Check the refund status in your order details or contact support with the order number."},
+ {"subject":"Account locked","description":"Too many login attempts locked my account","solution":"Use the account recovery process or contact support to regain access to the locked account."}
+]
